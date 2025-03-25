@@ -1,9 +1,9 @@
 # Swipeflix---grupp-01
 hej/ellinor
 hej
-hej/alma
+hej igen/alma
 hej/ellinor 
-hej/alma
+hej igen/alma
 hej/py
 hej abdulla
 heeeeeeeeej/ellinor
