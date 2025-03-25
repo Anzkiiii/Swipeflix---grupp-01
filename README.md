@@ -4,5 +4,5 @@ hej
 hej/alma
 hej/ellinor 
 hej/alma
-hej/py
+hej/py jag är en tjej som gillar potatis
 hej abdulla 
