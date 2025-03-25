@@ -1,3 +1,4 @@
 # Swipeflix---grupp-01
 hej/ellinor 
 hej abdulla 
+hej/alma
