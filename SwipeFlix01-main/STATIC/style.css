@@ -1,0 +1,380 @@
+/* Global styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(71,71,71,1) 7%,rgba(44,44,44,1) 30%,rgba(0,0,0,1) 49%,rgba(43,43,43,1) 79%,rgba(28,28,28,1) 95%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #cfb1a5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  text-align: center;
+  max-width: 360px;
+  padding: 10px;
+  margin-top: 0px;
+}
+
+#app h1{
+  padding: 0px;
+}
+
+#movie-container {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.movie-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2a2a40;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+#controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+#controls button {
+  background-color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#controls button:hover {
+  background-color: #555;
+}
+
+#movie-info {
+  margin-top: 20px;
+  background: #2a2a40;
+  padding: 15px;
+  border-radius: 12px;
+  color: #ddd;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 320px;
+  transition: height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+#movie-info .meta {
+  margin-bottom: 8px;
+}
+
+#movie-info .description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+#movie-info:hover .description {
+  max-height: 200px;
+  overflow-y: auto;  
+  opacity: 1;
+}
+
+#user-menu {
+position:fixed;
+right: 20px;
+top: 20px;
+background-color: transparent;
+}
+
+#user-icon {
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+  /*transition: transform 0.2s ease;*/
+  padding: 5px;
+  margin-top: 10px;
+  z-index: 10;
+  position: relative;
+}
+
+#auth-panel {
+  display: none;
+  background-color: rgb(11, 10, 10);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+  width: max-content;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+
+#login-btn{
+  margin-right: 50px;
+  font-size: 30px;
+}
+
+#register-btn{
+  font-size: 30px;
+}
+
+#auth-panel input {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b3b55;
+  color: rgb(255, 255, 255);
+}
+
+#auth-panel button {
+  padding: 8px;
+  background-color:transparent;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#auth-panel button:hover {
+  background-color: #6a6aff;
+}
+
+#auth-panel > p {
+  margin-right: 50px;
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+#auth-panel a{
+  text-decoration: none;
+  color: white; 
+}
+
+#auth-panel a:hover{
+  color:rgb(141, 123, 23) ;
+}
+
+#user-menu.locked #auth-panel {
+  display: flex;
+}
+
+#genre-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 998;
+  display: inline-block;
+}
+
+#genre-icon {
+  cursor: pointer;
+}
+
+#genre-panel {
+  display: none;
+  background-color: #2a2a40;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  width: 160px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+#genre-menu.locked #genre-panel {
+  display: flex;
+}
+
+.genre-item {
+  padding: 8px;
+  background-color: #3b3b55;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.genre-item:hover {
+  background-color: #4a4a70;
+}
+
+/*Registrering och logga in sida styling */
+#auth-box{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#auth-box h1{
+  font-size: 40px;
+}
+
+#auth-box form{
+display: flex;  
+flex-direction: column;
+margin-bottom: 20px;
+}
+
+#auth-box input{
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 2px;
+}
+
+#auth-box button{
+  border-radius: 10px;
+  background-color:#2a2a40;
+  color: white;
+  font-size: 26px;
+  padding: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/*Reg-box styling*/
+#reg-box{
+  text-align: center;
+}
+
+#reg-box h1{
+  font-size: 40px;
+}
+
+#reg-box form{
+display: flex;  
+flex-direction: column;
+margin-bottom: 20px;
+}
+
+#reg-box input{
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 2px;
+}
+
+#reg-box button{
+  border-radius: 10px;
+  background-color:#2a2a40;
+  color: white;
+  font-size: 26px;
+  padding: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#profile-page{
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 120px;
+}
+
+#profile-page #home-btn{
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+#profile-page #home-btn:hover{
+    background-color: #4a4a70;
+}
+
+#profile{
+  padding-left: 100px;
+}
+
+#profile > h1{
+  padding-bottom: 10px;
+}
+
+#username{
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  color: white;
+}
+
+#username > img{
+  margin-top: 61px;
+}
+
+#profile> p{
+  font-size: 22px;
+  color: white;
+  margin-top: 0px;
+}
+
+#profile-page #logout-btn{
+  font-size: 20px;
+  margin-top: 100px;
+  margin-left: 100px;
+  padding: 3px;
+  border-radius: 7px;
+  background-color: #333;
+  color: rgb(243, 244, 245);
+  cursor: pointer;
+}
+
+#liked-movies > h2{
+  color:rgb(141, 123, 23);
+  font-size: 27px;
+  text-decoration: underline;
+  padding-left: 100px;
+}
+
+#liked-movies-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#liked-movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.movie-tile {
+  width: 120px;
+  text-align: center;
+}
+
+.movie-tile img {
+  width: 100%;
+  border-radius: 8px;
+}
